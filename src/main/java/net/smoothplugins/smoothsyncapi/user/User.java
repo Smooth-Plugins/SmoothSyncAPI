@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.Statistic;
+import org.bukkit.advancement.Advancement;
 import org.bukkit.advancement.AdvancementProgress;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -30,7 +31,7 @@ public class User {
     private int maximumAir;
     private int remainingAir;
     private Location location;
-    private Set<AdvancementProgress> advancements;
+    private HashMap<Advancement, AdvancementProgress> advancements;
     private HashMap<Statistic, Integer> statistics;
 
     public User(UUID uuid) {
@@ -145,11 +146,11 @@ public class User {
         this.location = location;
     }
 
-    public Set<AdvancementProgress> getAdvancements() {
+    public HashMap<Advancement, AdvancementProgress> getAdvancements() {
         return advancements;
     }
 
-    public void setAdvancements(Set<AdvancementProgress> advancements) {
+    public void setAdvancements(HashMap<Advancement, AdvancementProgress> advancements) {
         this.advancements = advancements;
     }
 
