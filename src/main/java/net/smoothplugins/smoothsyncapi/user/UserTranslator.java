@@ -4,6 +4,6 @@ import org.bukkit.entity.Player;
 
 public interface UserTranslator {
 
-    User translateToUser(User user, Player player);
-    Player translateToPlayer(User user, Player player);
+    void translateToUser(User user, Player player);
+    void translateToPlayer(User user, Player player);
 }
