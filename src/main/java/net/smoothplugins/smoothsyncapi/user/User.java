@@ -9,6 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Set;
 import java.util.UUID;
 
@@ -30,7 +31,7 @@ public class User {
     private int remainingAir;
     private Location location;
     private Set<AdvancementProgress> advancements;
-    private Set<Statistic> statistics;
+    private HashMap<Statistic, Integer> statistics;
 
     public User(UUID uuid) {
         this.uuid = uuid;
@@ -152,11 +153,11 @@ public class User {
         this.advancements = advancements;
     }
 
-    public Set<Statistic> getStatistics() {
+    public HashMap<Statistic, Integer> getStatistics() {
         return statistics;
     }
 
-    public void setStatistics(Set<Statistic> statistics) {
+    public void setStatistics(HashMap<Statistic, Integer> statistics) {
         this.statistics = statistics;
     }
 }
