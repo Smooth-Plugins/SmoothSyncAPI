@@ -3,9 +3,11 @@ package net.smoothplugins.smoothsyncapi.user;
 import com.google.gson.annotations.SerializedName;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.Statistic;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.advancement.AdvancementProgress;
+import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
@@ -32,7 +34,9 @@ public class User {
     private int remainingAir;
     private Location location;
     private HashMap<Advancement, AdvancementProgress> advancements;
-    private HashMap<Statistic, Integer> statistics;
+    private HashMap<Statistic, Integer> globalStatistics;
+    private HashMap<Statistic, HashMap<Material, Integer>> blockStatistics;
+    private HashMap<Statistic, HashMap<EntityType, Integer>> entityStatistics;
 
     public User(UUID uuid) {
         this.uuid = uuid;
@@ -154,11 +158,27 @@ public class User {
         this.advancements = advancements;
     }
 
-    public HashMap<Statistic, Integer> getStatistics() {
-        return statistics;
+    public HashMap<Statistic, Integer> getGlobalStatistics() {
+        return globalStatistics;
     }
 
-    public void setStatistics(HashMap<Statistic, Integer> statistics) {
-        this.statistics = statistics;
+    public void setGlobalStatistics(HashMap<Statistic, Integer> globalStatistics) {
+        this.globalStatistics = globalStatistics;
+    }
+
+    public HashMap<Statistic, HashMap<Material, Integer>> getBlockStatistics() {
+        return blockStatistics;
+    }
+
+    public void setBlockStatistics(HashMap<Statistic, HashMap<Material, Integer>> blockStatistics) {
+        this.blockStatistics = blockStatistics;
+    }
+
+    public HashMap<Statistic, HashMap<EntityType, Integer>> getEntityStatistics() {
+        return entityStatistics;
+    }
+
+    public void setEntityStatistics(HashMap<Statistic, HashMap<EntityType, Integer>> entityStatistics) {
+        this.entityStatistics = entityStatistics;
     }
 }
