@@ -11,10 +11,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 public class User {
 
@@ -33,7 +30,7 @@ public class User {
     private int maximumAir;
     private int remainingAir;
     private Location location;
-    private HashMap<Advancement, AdvancementProgress> advancements;
+    private HashMap<Advancement, Collection<String>> advancements;
     private HashMap<Statistic, Integer> globalStatistics;
     private HashMap<Statistic, HashMap<Material, Integer>> blockStatistics;
     private HashMap<Statistic, HashMap<EntityType, Integer>> entityStatistics;
@@ -150,11 +147,11 @@ public class User {
         this.location = location;
     }
 
-    public HashMap<Advancement, AdvancementProgress> getAdvancements() {
+    public HashMap<Advancement, Collection<String>> getAdvancements() {
         return advancements;
     }
 
-    public void setAdvancements(HashMap<Advancement, AdvancementProgress> advancements) {
+    public void setAdvancements(HashMap<Advancement, Collection<String>> advancements) {
         this.advancements = advancements;
     }
 
