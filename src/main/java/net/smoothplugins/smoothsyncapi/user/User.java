@@ -22,8 +22,9 @@ public class User {
     private ItemStack[] enderChestItems;
     private GameMode gameMode;
     private float exp;
+    private int level;
     private Collection<PotionEffect> potionEffects;
-    private double healthScale;
+    private double maxHealth;
     private double health;
     private int foodLevel;
     private float saturation;
@@ -84,6 +85,14 @@ public class User {
         this.exp = exp;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     public Collection<PotionEffect> getPotionEffects() {
         return potionEffects;
     }
@@ -92,12 +101,12 @@ public class User {
         this.potionEffects = potionEffects;
     }
 
-    public double getHealthScale() {
-        return healthScale;
+    public double getMaxHealth() {
+        return maxHealth;
     }
 
-    public void setHealthScale(double healthScale) {
-        this.healthScale = healthScale;
+    public void setMaxHealth(double maxHealth) {
+        this.maxHealth = maxHealth;
     }
 
     public double getHealth() {
