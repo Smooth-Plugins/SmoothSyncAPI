@@ -18,6 +18,7 @@ public class User {
     @SerializedName("_id")
     private final UUID uuid;
     private ItemStack[] inventoryItems;
+    private int heldItemSlot;
     private ItemStack[] enderChestItems;
     private GameMode gameMode;
     private float exp;
@@ -49,6 +50,14 @@ public class User {
 
     public void setInventoryItems(ItemStack[] inventoryItems) {
         this.inventoryItems = inventoryItems;
+    }
+
+    public int getHeldItemSlot() {
+        return heldItemSlot;
+    }
+
+    public void setHeldItemSlot(int heldItemSlot) {
+        this.heldItemSlot = heldItemSlot;
     }
 
     public ItemStack[] getEnderChestItems() {
