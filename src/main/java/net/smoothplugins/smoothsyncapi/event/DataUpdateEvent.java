@@ -13,7 +13,7 @@ import java.util.Set;
 /**
  * This event is called before the data is saved.
  */
-public class DataSaveEvent extends PlayerEvent implements Cancellable {
+public class DataUpdateEvent extends PlayerEvent implements Cancellable {
 
     private static final HandlerList HANDLERS = new HandlerList();
     private boolean cancelled;
@@ -21,7 +21,7 @@ public class DataSaveEvent extends PlayerEvent implements Cancellable {
     private final Cause cause;
     private Set<Destination> destinations;
 
-    public DataSaveEvent(@NotNull Player who, @NotNull User user, Cause cause, Destination... destinations) {
+    public DataUpdateEvent(@NotNull Player who, @NotNull User user, Cause cause, Destination... destinations) {
         super(who);
         this.user = user;
         this.cause = cause;
