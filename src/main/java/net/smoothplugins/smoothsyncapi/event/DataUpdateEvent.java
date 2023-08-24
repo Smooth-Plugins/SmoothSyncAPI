@@ -19,13 +19,13 @@ public class DataUpdateEvent extends PlayerEvent implements Cancellable {
     private boolean cancelled;
     private final User user;
     private final Cause cause;
-    private Set<Destination> destinations;
+    private final Set<Destination> destinations;
 
-    public DataUpdateEvent(@NotNull Player who, @NotNull User user, Cause cause, Destination... destinations) {
+    public DataUpdateEvent(@NotNull Player who, @NotNull User user, Cause cause, Set<Destination> destinations) {
         super(who);
         this.user = user;
         this.cause = cause;
-        this.destinations = Set.of(destinations);
+        this.destinations = destinations;
     }
 
     @Override
@@ -59,14 +59,10 @@ public class DataUpdateEvent extends PlayerEvent implements Cancellable {
         return destinations;
     }
 
-    public void setDestinations(Set<Destination> destinations) {
-        this.destinations = destinations;
-    }
-
     public enum Cause {
-        TIMER,
+        INTERVAL,
         LEAVE,
-        RESPAWN,
+        DEATH,
         STOP
     }
 }
