@@ -52,6 +52,23 @@ public interface UserService {
     Optional<User> getUserByUsername(String username);
 
     /**
+     * Gets a (optional) user by their UUID (preferred over username).
+     * The returned user might not be present in the storage or the cache.
+     * @param uuid
+     * @return the user if found, empty if not.
+     */
+    Optional<User> requestUpdatedUserByUUID(UUID uuid);
+
+    /**
+     * Gets a (optional) user by their username.
+     * The username is case-insensitive.
+     * The returned user might not be present in the storage or the cache.
+     * @param username
+     * @return the user if found, empty if not.
+     */
+    Optional<User> requestUpdatedUserByUsername(String username);
+
+    /**
      * Deletes a user by their UUID (preferred over username).
      * @param uuid
      * @param destinations
