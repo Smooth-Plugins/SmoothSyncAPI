@@ -57,7 +57,7 @@ public interface UserService {
      * @param uuid
      * @return the user if found, empty if not.
      */
-    Optional<User> requestUpdatedUserByUUID(UUID uuid);
+    Optional<User> requestUpdatedUserByUUID(UUID uuid) throws InterruptedException;
 
     /**
      * Gets a (optional) user by their username.
@@ -66,7 +66,7 @@ public interface UserService {
      * @param username
      * @return the user if found, empty if not.
      */
-    Optional<User> requestUpdatedUserByUsername(String username);
+    Optional<User> requestUpdatedUserByUsername(String username) throws InterruptedException;
 
     /**
      * Deletes a user by their UUID (preferred over username).
