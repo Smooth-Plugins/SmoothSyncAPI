@@ -135,4 +135,19 @@ public interface UserService {
      * @return true if the user was found and the time to live was set, false if the user was not found.
      */
     boolean setTTLOfCacheByUsername(String username, int seconds);
+
+    /**
+     * Get if a user in the cache has a time to live by their UUID (preferred over username).
+     * @param uuid
+     * @return
+     */
+    boolean hasTTLOfCacheByUUID(UUID uuid);
+
+    /**
+     * Get if a user in the cache has a time to live by their username.
+     * The username is case-insensitive.
+     * @param username
+     * @return
+     */
+    boolean hasTTLOfCacheByUsername(String username);
 }
