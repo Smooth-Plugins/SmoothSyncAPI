@@ -8,6 +8,7 @@ import org.bukkit.Statistic;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.advancement.AdvancementProgress;
 import org.bukkit.entity.EntityType;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
@@ -17,7 +18,9 @@ public class User {
 
     @SerializedName("_id")
     private final UUID uuid;
-    private ItemStack[] inventoryItems;
+    private ItemStack[] inventoryStorageContents;
+    private ItemStack[] inventoryArmorContents;
+    private ItemStack[] inventoryExtraContents;
     private int heldItemSlot;
     private ItemStack[] enderChestItems;
     private GameMode gameMode;
@@ -39,18 +42,35 @@ public class User {
 
     public User(UUID uuid) {
         this.uuid = uuid;
+        Player player = null;
     }
 
     public UUID getUuid() {
         return uuid;
     }
 
-    public ItemStack[] getInventoryItems() {
-        return inventoryItems;
+    public ItemStack[] getInventoryStorageContents() {
+        return inventoryStorageContents;
     }
 
-    public void setInventoryItems(ItemStack[] inventoryItems) {
-        this.inventoryItems = inventoryItems;
+    public void setInventoryStorageContents(ItemStack[] inventoryStorageContents) {
+        this.inventoryStorageContents = inventoryStorageContents;
+    }
+
+    public ItemStack[] getInventoryArmorContents() {
+        return inventoryArmorContents;
+    }
+
+    public void setInventoryArmorContents(ItemStack[] inventoryArmorContents) {
+        this.inventoryArmorContents = inventoryArmorContents;
+    }
+
+    public ItemStack[] getInventoryExtraContents() {
+        return inventoryExtraContents;
+    }
+
+    public void setInventoryExtraContents(ItemStack[] inventoryExtraContents) {
+        this.inventoryExtraContents = inventoryExtraContents;
     }
 
     public int getHeldItemSlot() {
