@@ -7,7 +7,6 @@ import org.bukkit.Material;
 import org.bukkit.Statistic;
 import org.bukkit.advancement.Advancement;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 
@@ -40,10 +39,10 @@ public class User {
     private HashMap<Statistic, Integer> globalStatistics;
     private HashMap<Statistic, HashMap<Material, Integer>> blockStatistics;
     private HashMap<Statistic, HashMap<EntityType, Integer>> entityStatistics;
+    private HashMap<Object, Object> extraData;
 
     public User(UUID uuid) {
         this.uuid = uuid;
-        Player player = null;
     }
 
     public UUID getUuid() {
@@ -216,5 +215,17 @@ public class User {
 
     public void setEntityStatistics(HashMap<Statistic, HashMap<EntityType, Integer>> entityStatistics) {
         this.entityStatistics = entityStatistics;
+    }
+
+    public HashMap<Object, Object> getExtraData() {
+        if (extraData == null) {
+            extraData = new HashMap<>();
+        }
+
+        return extraData;
+    }
+
+    public void setExtraData(HashMap<Object, Object> extraData) {
+        this.extraData = extraData;
     }
 }
