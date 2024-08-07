@@ -40,6 +40,8 @@ public class User {
     private HashMap<Statistic, HashMap<Material, Integer>> blockStatistics;
     private HashMap<Statistic, HashMap<EntityType, Integer>> entityStatistics;
     private HashMap<Object, Object> extraData;
+    private boolean allowFlight;
+    private boolean flying;
 
     public User(UUID uuid) {
         this.uuid = uuid;
@@ -227,5 +229,21 @@ public class User {
 
     public void setExtraData(HashMap<Object, Object> extraData) {
         this.extraData = extraData;
+    }
+
+    public boolean isAllowFlight() {
+        return allowFlight;
+    }
+
+    public void setAllowFlight(boolean allowFlight) {
+        this.allowFlight = allowFlight;
+    }
+
+    public boolean isFlying() {
+        return flying;
+    }
+
+    public void setFlying(boolean flying) {
+        this.flying = flying;
     }
 }
