@@ -1,4 +1,4 @@
-package net.smoothplugins.smoothsyncapi.service;
+package com.smoothresources.smoothsyncapi.service;
 
 public enum Destination {
     STORAGE,

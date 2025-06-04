@@ -1,4 +1,4 @@
-package net.smoothplugins.smoothsyncapi.event;
+package com.smoothresources.smoothsyncapi.event;
 
 
 import org.bukkit.entity.Player;

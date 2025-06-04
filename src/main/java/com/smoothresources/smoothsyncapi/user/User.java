@@ -1,4 +1,4 @@
-package net.smoothplugins.smoothsyncapi.user;
+package com.smoothresources.smoothsyncapi.user;
 
 import com.google.gson.annotations.SerializedName;
 import org.bukkit.GameMode;

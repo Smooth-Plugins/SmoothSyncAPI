@@ -1,6 +1,6 @@
-package net.smoothplugins.smoothsyncapi.event;
+package com.smoothresources.smoothsyncapi.event;
 
-import net.smoothplugins.smoothsyncapi.user.User;
+import com.smoothresources.smoothsyncapi.user.User;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.HandlerList;

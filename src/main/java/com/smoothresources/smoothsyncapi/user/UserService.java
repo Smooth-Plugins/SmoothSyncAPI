@@ -1,6 +1,6 @@
-package net.smoothplugins.smoothsyncapi.user;
+package com.smoothresources.smoothsyncapi.user;
 
-import net.smoothplugins.smoothsyncapi.service.Destination;
+import com.smoothresources.smoothsyncapi.service.Destination;
 
 import java.util.Optional;
 import java.util.UUID;
